@@ -8,6 +8,10 @@ def get_input_parameters():
     # TODO: в этой функции пишем весь необходимый код для
     #  получения входных параметров.
     #  Логику расчётов тут не программируем
+    list = []
+    for number in range(int(input("Введи количество значений в массиве "))):
+      list.append(int(input("Введи число ")))
+    return(list)
     pass
 
 
@@ -21,6 +25,7 @@ def display_result(sorted_list):
     # TODO: в этой функции пишем весь необходимый код
     #  для вывода результата в нужном формате.
     #  Логику расчётов тут не программируем
+    print("Отсортированный список ", sorted_list)
     pass
 
 
@@ -40,6 +45,14 @@ def sort_list(original_list):
     #  (из функции get_input_parameters).
     #  Функция на выход отдаёт результат необходимый для отображения работы программы,
     #  который будет передан в функцию display_result.
+    for number in range(len(original_list)):
+        a_number = original_list[number]
+
+        for s_number in range(len(original_list)):
+            if original_list[number] < original_list[s_number]:
+                original_list[s_number], original_list[number] = original_list[number], original_list[s_number]
+
+    return (original_list)
     pass
 
 

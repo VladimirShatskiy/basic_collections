@@ -8,6 +8,7 @@ def display_result(participants_names):
     # TODO: в этой функции пишем весь необходимый код
     #  для вывода результата в нужном формате.
     #  Логику расчётов тут не программируем
+    print("Участники первого дня ", participants_names)
     pass
 
 
@@ -26,6 +27,14 @@ def get_participants_names(names):
     #  Функция на вход принимает ранее инициализированные данные
     #  Функция на выход отдаёт результат необходимый для отображения работы программы,
     #  который будет передан в функцию display_result.
+    new_list = []
+    count = 0
+    for name in names:
+        if count % 2 == 0:
+                new_list.append(name)
+        count += 1
+
+    return new_list
     pass
 
 

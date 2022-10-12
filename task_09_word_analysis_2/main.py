@@ -8,6 +8,7 @@ def get_input_parameters():
     # TODO: в этой функции пишем весь необходимый код для
     #  получения входных параметров.
     #  Логику расчётов тут не программируем
+    return (input("Введи слово "))
     pass
 
 
@@ -21,6 +22,10 @@ def display_result(is_palindrome):
     # TODO: в этой функции пишем весь необходимый код
     #  для вывода результата в нужном формате.
     #  Логику расчётов тут не программируем
+    if is_palindrome:
+      print("Слово является палиндромом")
+    else:
+      print("Слово не является палиндромом")
     pass
 
 
@@ -40,6 +45,14 @@ def check_palindrome(word):
     #  (из функции get_input_parameters).
     #  Функция на выход отдаёт результат необходимый для отображения работы программы,
     #  который будет передан в функцию display_result.
+    reverce_word = ""
+    for num in range(len(word)):
+      reverce_word += word[len(word) - 1 - num]
+    if reverce_word == word:
+      flag = True
+    else:
+      flag = False
+    return(flag)
     pass
 
 

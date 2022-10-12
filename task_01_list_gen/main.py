@@ -1,15 +1,7 @@
 def get_input_parameters():
-    """
-    Получаем N
 
-    :return: N, например: 14
-    :rtype: int
-    """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
-    pass
-
+    number_n = int(input('Ввести число для формирования чисел '))
+    return(number_n)
 
 def display_result(odd_numbers):
     """
@@ -21,10 +13,11 @@ def display_result(odd_numbers):
     # TODO: в этой функции пишем весь необходимый код
     #  для вывода результата в нужном формате.
     #  Логику расчётов тут не программируем
+    print(odd_numbers)
     pass
 
 
-def get_odd_numbers(number):
+def get_odd_numbers(number, apend=None):
     """
     Получаем отсортированный по возрастанию список
     нечётных чисел от 1 до number.
@@ -42,6 +35,12 @@ def get_odd_numbers(number):
     #  (из функции get_input_parameters).
     #  Функция на выход отдаёт результат необходимый для отображения работы программы,
     #  который будет передан в функцию display_result.
+    count = 0
+    list = []
+    for odd_numbers in range(1, number + 1, 2):
+        list.append(odd_numbers)
+        count += 1
+    return(list)
     pass
 
 

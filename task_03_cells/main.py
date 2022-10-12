@@ -8,6 +8,14 @@ def get_input_parameters():
     # TODO: в этой функции пишем весь необходимый код для
     #  получения входных параметров.
     #  Логику расчётов тут не программируем
+    cells= []
+    print("Количество клеток 5")
+
+    for item in range(5):
+        print(f"Эффективность {item + 1} клетки : ", end = "")
+        cells.append(int(input()))
+
+    return(cells)
     pass
 
 
@@ -21,6 +29,10 @@ def display_result(cells):
     # TODO: в этой функции пишем весь необходимый код
     #  для вывода результата в нужном формате.
     #  Логику расчётов тут не программируем
+    print("Неподходящие значения :", end ="")
+
+    for item in range(len(cells)):
+        print(" ", cells[item], end = "")
     pass
 
 
@@ -40,7 +52,15 @@ def select_cells(cells):
     #  (из функции get_input_parameters).
     #  Функция на выход отдаёт результат необходимый для отображения работы программы,
     #  который будет передан в функцию display_result.
-    pass
+    new_cells = []
+
+    for item in range(len(cells)):
+        if item > int(cells[item]):
+            new_cells.append(cells[item])
+
+    return(new_cells)
+    pass2
+
 
 
 if __name__ == '__main__':

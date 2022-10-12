@@ -7,9 +7,23 @@ def get_input_parameters():
              например: [[165, 163, 160, 160, 157, 157, 155, 154], 162]
     :rtype: List[List[int], int]
     """
-    # TODO: в этой функции пишем весь необходимый код для
-    #  получения входных параметров.
-    #  Логику расчётов тут не программируем
+    count_container = int(input("Количество контейнеров: "))
+    all_conteiners = []
+    for _ in range(count_container):
+        container = int(input("Введи вес контейнера: "))
+        if container < 0 or container > 200:
+            print("Вес контейнера не соотвествует параметрам 0 < вес < 200 "
+                  "\n повторяем процедуру ввода")
+            get_input_parameters()
+        all_conteiners.append(container)
+    weight = int(input("Введи вес нового контейнера: "))
+    if weight < 0 or weight > 200:
+        print("Вес контейнера не соотвествует параметрам 0 < вес < 200 "
+              "\n повторяем процедуру ввода")
+        get_input_parameters()
+
+    return(all_conteiners, weight)
+
     pass
 
 
@@ -20,9 +34,7 @@ def display_result(serial_number_new_container):
     :param serial_number_new_container: порядковый номер нового контейнера, например: 3
     :type serial_number_new_container: int
     """
-    # TODO: в этой функции пишем весь необходимый код
-    #  для вывода результата в нужном формате.
-    #  Логику расчётов тут не программируем
+    print(f"\nНомер куда встанет новый контейнер {serial_number_new_container}")
     pass
 
 
@@ -38,12 +50,12 @@ def search_serial_number_new_container(list_container_weights, new_container_wei
     :return: порядковый номер нового контейнера, например: 3
     :rtype: int
     """
-    # TODO: в этой функции пишем логику поиска куда вставим новый контейнер.
-    #  print'ов и input'ов тут не должно быть.
-    #  Функция на вход принимает ранее полученные данные
-    #  (из функции get_input_parameters).
-    #  Функция на выход отдаёт результат необходимый для отображения работы программы,
-    #  который будет передан в функцию display_result.
+    count = 1
+    for container in list_container_weights:
+        if new_container_weight > container:
+            break
+        count += 1
+    return (count)
     pass
 
 
